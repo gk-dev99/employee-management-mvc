@@ -1,0 +1,32 @@
+﻿@model EmployeeManagementSystem.ViewModels.EmployeeVM
+
+<h2>Edit Employee</h2>
+
+<form asp-action="Edit" method="post">
+
+    <div asp-validation-summary="ModelOnly" style="color:red;"></div>
+
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label>Name</label><br />
+        <input asp-for="Name" />
+        <br />
+        <span asp-validation-for="Name" style="color:red;"></span>
+    </div>
+
+    <br />
+
+    <div>
+        <label>Age</label><br />
+        <input asp-for="Age" />
+        <br />
+        <span asp-validation-for="Age" style="color:red;"></span>
+    </div>
+
+    <br />
+
+    <button type="submit">Update</button>
+    <a asp-action="Index">Back to List</a>
+
+</form>

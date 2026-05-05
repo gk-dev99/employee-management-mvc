@@ -1,0 +1,15 @@
+﻿@model Employee
+
+<h2> Employee Details</h2>
+<div>
+    <b>Id:</b> @Model.Id
+</div>
+<div>
+    <b>Name:</b> @Model.Name
+</div>
+<div>
+    <b>Age:</b> @Model.Age
+</div>
+<br/>
+<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+<a asp-action="Index">Back to List</a>

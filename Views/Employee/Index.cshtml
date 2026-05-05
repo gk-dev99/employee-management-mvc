@@ -1,0 +1,59 @@
+﻿@model List<Employee>
+
+<h2>Employee List</h2>
+
+@if (TempData["Success"] != null)
+{
+    <div style="color:green; margin-bottom:10px;">
+        @TempData["Success"]
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div style="color:red; margin-bottom:10px;">
+        @TempData["Error"]
+    </div>
+}
+
+<p>
+    <a asp-action="Create">Create New Employee</a>
+</p>
+
+@if (Model == null || !Model.Any())
+{
+    <p>No employees found.</p>
+}
+else
+{
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var emp in Model)
+            {
+                <tr>
+                    <td>@emp.Id</td>
+                    <td>@emp.Name</td>
+                    <td>@emp.Age</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@emp.Id">Details</a> |
+                        <a asp-action="Edit" asp-route-id="@emp.Id">Edit</a> |
+
+                        <form asp-action="Delete" method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="@emp.Id" />
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
