@@ -17,11 +17,11 @@ A simple Employee Management application built using ASP.NET Core MVC.
 - SQL Server
 - Razor Views
 
-## How to Run
-1. Clone the repository
-2. Open in Visual Studio
-3. Update database connection if needed
-4. Run the project
+## Architecture
+
+## Azure Deployment
+
+## Learning Outcomes
 
 ## Author
 Gurmeet Kaur
